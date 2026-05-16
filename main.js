@@ -57,7 +57,7 @@ function Calcular() {
     sumatorio = 0
     CalcularFi()
     sumatorio = 0
-    let pos = 0
+    let pos = -1
     data.forEach((element) => {
         pos++;
         let xi = (element.start + element.end) / 2 /* Ej: [0, 4) -> 0 + 4 = 4 -> 4 / 2 = 2 -> xi = 2 */
@@ -68,7 +68,7 @@ function Calcular() {
         FiLista.push(Fi);
         let Hi = Fi / N
         HiLista.push(Hi)
-        let xiMultfi = xiLista[pos+1] * element.count
+        let xiMultfi = xiLista[pos] * element.count
         console.log(xiMultfi)
         xiPorfi.push(xiMultfi)
         contenido.innerHTML += `
@@ -77,14 +77,14 @@ function Calcular() {
                 <br>
                 <label>fi: ${element.count}</label>
                 <br>
-                <label>hi: ${element.count} / ${N} = ${hi} -> ${hi * 100} %</label>
+                <label>hi: ${element.count} / ${N} = ${hi.toFixed(2)} -> ${(hi * 100).toFixed(0)} %</label>
                 <br>
                 <label>Fi: ${Fi}</label>
                 <br>
-                <label>Hi: ${Hi}</label>
+                <label>Hi: ${Fi} / ${N}</label>
                 <br>
                 <label>xi · fi: ${xiMultfi}</label>
-                <br>
+                <br><br>
         `;
     })
 
