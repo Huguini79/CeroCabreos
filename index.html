@@ -1,23 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CeroCabreos</title>
-</head>
-<body>
+    <style>
+    input {
+        width: 50px;
+    }
+      table {
+        border-collapse: collapse;
+        table-layout: auto;
+        width: auto;
+      }
+
+      td,
+      th {
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1>CeroCabreos - Huguini79</h1>
+    </header>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <h2>Completa una columna para la tabla</h2>
-    <label>Marca de clase Intervalo -> [a, b): [<input type="number" id="input1">, <input type="number" id="input2">)</label>
-    <br>
-    <label>Frecuencia Absoluta (fi): <input type="number" id="fi_entrada"></label>
-    <br><br>
+    <label
+      >Marca de clase Intervalo -> [a, b): [<input type="number" id="input1" />,
+      <input type="number" id="input2" />)</label
+    >
+    <br />
+    <label
+      >Frecuencia Absoluta (fi): <input type="number" id="fi_entrada"
+    /></label>
+    <br /><br />
     <button onclick="AnadirTabla()">Añadir a la Tabla</button>
     <button onclick="Calcular()">Calcular</button>
     <button onclick="Grafica()">Mostrar Gráfica</button>
     <button onclick="GuardarEnPdf()">Guardar en PDF</button>
-    <div id="resultado"></div>
-    <div style="width: 800px;"><canvas id="grafica"></canvas></div>
+        <table id="tabla">
+             </table>
+    <div style="width: 800px"><canvas id="grafica"></canvas></div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
