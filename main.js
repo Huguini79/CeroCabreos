@@ -1,6 +1,7 @@
 let data = [];
 
 let xiLista = [];
+let fiLista = [];
 let hiLista = [];
 let FiLista = [];
 let HiLista = [];
@@ -21,6 +22,15 @@ function MostrarGrafica() {
           label: "Histograma",
           data: data.map((row) => row.count),
         },
+        {
+         label: 'Polígono de frecuencias',
+         data: fiLista,
+         type: "line",
+         borderColor: "red",
+         borderWidth: 2,
+         fill: false,
+         tension: 0 
+        }
       ],
     },
   });
@@ -87,6 +97,7 @@ function Calcular() {
   let contenido = document.getElementById("tabla")
   let resultado = document.getElementById("resultado")
   xiLista = []
+  fiLista = []
   hiLista = []
   FiLista = []
   HiLista = []
@@ -109,6 +120,7 @@ function Calcular() {
                         `;
   data.forEach((element) => {
     pos++;
+    fiLista.push(element.count);
     let xi =
       (element.start + element.end) /
       2; /* Ej: [0, 4) -> 0 + 4 = 4 -> 4 / 2 = 2 -> xi = 2 */
