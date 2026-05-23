@@ -6,7 +6,7 @@
     <title>CeroCabreos</title>
     <style>
     input {
-        width: 50px;
+        width: 40px;
     }
       table {
         border-collapse: collapse;
@@ -29,24 +29,24 @@
         <h1>CeroCabreos - Huguini79</h1>
     </header>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <h2>Completa una columna para la tabla</h2>
-    <label
-      >Marca de clase Intervalo -> [a, b): [<input type="number" id="input1" />,
-      <input type="number" id="input2" />)</label
-    >
-    <br />
-    <label
-      >Frecuencia Absoluta (fi): <input type="number" id="fi_entrada"
-    /></label>
-    <br /><br />
+    <table id="tabla">
+      <tr>
+                            <td>Clases</td>
+                            <td>fi</td>
+                </tr>
+      <tr>
+        <td>[<input type="number" id="input1">, <input type="number" id="input2">)</td>
+        <td><input type="number" id="fi_entrada"></td>
+      </tr>
+             </table>
+             <br></br>
     <button onclick="AnadirTabla()">Añadir a la Tabla</button>
     <button onclick="Calcular()">Calcular</button>
     <button onclick="Grafica()">Mostrar Gráfica</button>
     <button onclick="GuardarEnPdf()">Guardar en PDF</button>
     <div id="resultado"></div>
-    <table id="tabla">
-             </table>
     <div style="width: 800px"><canvas id="grafica"></canvas></div>
+    <div style="width: 800px"><canvas id="grafica2"></canvas></div>
     <script src="main.js"></script>
   </body>
 </html>
