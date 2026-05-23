@@ -133,6 +133,12 @@ function AnadirTabla() {
   }
 }
 
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter' || event.key === 'ArrowDown') {
+    AnadirTabla();
+  }
+})
+
 function Calcular() {
   let contenido = document.getElementById("tabla")
   let resultado = document.getElementById("resultado")
