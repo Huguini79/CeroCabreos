@@ -8,11 +8,17 @@ let HiLista = [];
 let xiPorfi = [];
 
 let miGrafica = null
+let miGrafica2 = null
 
 function MostrarGrafica() {
     if (miGrafica) {
         miGrafica.destroy()
     }
+
+    if (miGrafica2) {
+      miGrafica2.destroy()
+    }
+
   miGrafica = new Chart(document.getElementById("grafica"), {
     type: "bar",
     data: {
@@ -34,6 +40,33 @@ function MostrarGrafica() {
       ],
     },
   });
+
+  miGrafica2 = new Chart(document.getElementById('grafica2'), {
+    type: 'pie',
+    data: {
+      labels: data.map((row) => `[${row.start}, ${row.end})`),
+      datasets: [
+        {
+          backgroundColor: [
+            "#2ecc71",
+            "#3498db",
+            "#95a5a6",
+            "#9b59b6",
+            "#f1c40f",
+            "#e74c3c",
+            "#34495e"
+          ],
+          label: "Frecuencia absoluta",
+          data: fiLista,
+          borderWidth: 1
+        },
+        {
+          data: data,
+        }
+      ]
+    }
+  });
+
 }
 
 function NEnTotal() {
@@ -87,6 +120,13 @@ function AnadirTabla() {
                         </tr>
             `
     });
+
+    contenido.innerHTML += `
+      <tr>
+        <td>[<input type="number" id="input1">, <input type="number" id="input2">)</td>
+        <td><input type="number" id="fi_entrada"></td>
+      </tr>
+    `;
 
   } else {
     alert("Campos vacíos, introduce los números necesarios");
